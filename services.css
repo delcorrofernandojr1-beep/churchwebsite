@@ -1,0 +1,92 @@
+/* ===================================
+   SERVICES HERO (match About page)
+=================================== */
+
+.services-hero {
+  position: relative;
+  background: var(--navy);
+  padding: 120px 28px 72px; /* same spacing as about */
+  text-align: center;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  overflow: hidden;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeDown 0.8s ease both;
+}
+
+/* label */
+.services-hero-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.55);
+  margin-bottom: 14px;
+}
+
+/* cross */
+.services-hero-cross {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: block;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* title */
+.services-hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+/* subtitle */
+.services-hero-content p {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* divider */
+.services-hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.services-hero-divider span {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.3);
+}
+
+.services-hero-divider .diamond {
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFI Login & Register</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:"Times New Roman", serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)),
+            url('church-bg.jpg');
+
+            background-size:cover;
+            background-position:center;
+        }
+
+        .container{
+            width:380px;
+            background:rgba(0,24,69,0.95);
+            padding:40px;
+            border-radius:15px;
+            color:white;
+            box-shadow:0 0 15px rgba(0,0,0,0.5);
+            position:relative;
+        }
+
+        .back-btn{
+            position:absolute;
+            top:15px;
+            left:15px;
+            text-decoration:none;
+            color:gold;
+            border:1px solid gold;
+            padding:5px 10px;
+            border-radius:5px;
+        }
+
+        .back-btn:hover{
+            background:gold;
+            color:#001845;
+        }
+
+        h1{
+            text-align:center;
+            color:gold;
+            margin-bottom:10px;
+        }
+
+        p{
+            text-align:center;
+            margin-bottom:20px;
+            color:#ddd;
+        }
+
+        .input-box{
+            margin-bottom:15px;
+        }
+
+        .input-box label{
+            display:block;
+            margin-bottom:5px;
+            color:gold;
+        }
+
+        .input-box input{
+            width:100%;
+            padding:12px;
+            border-radius:8px;
+            border:1px solid gold;
+            outline:none;
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:gold;
+            font-weight:bold;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        .btn:hover{
+            background:#d4af37;
+        }
+
+        .switch{
+            text-align:center;
+            margin-top:15px;
+        }
+
+        .switch a{
+            color:gold;
+            cursor:pointer;
+            text-decoration:none;
+        }
+
+        .message{
+            text-align:center;
+            margin-top:15px;
+            color:#ffb3b3;
+        }
+
+        #registerForm{
+            display:none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="back-btn">← Back</a>
+
+        <!-- LOGIN FORM -->
+
+        <div id="loginForm">
+
+            <h1>Login Account</h1>
+            <p>Iglesia Filipina Independiente</p>
+
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" id="loginUsername">
+            </div>
+
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" id="loginPassword">
+            </div>
+
+            <button class="btn" onclick="login()">
+                LOGIN
+            </button>
+
+            <div class="switch">
+                No account?
+                <a onclick="showRegister()">Register Here</a>
+            </div>
+
+        </div>
+
+        <!-- REGISTER FORM -->
+
+        <div id="registerForm">
+
+            <h1>Register Account</h1>
+
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" id="registerUsername">
+            </div>
+
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" id="registerPassword">
+            </div>
+
+            <button class="btn" onclick="register()">
+                REGISTER
+            </button>
+
+            <div class="switch">
+                Already have account?
+                <a onclick="showLogin()">Login Here</a>
+            </div>
+
+        </div>
+
+        <div class="message" id="message"></div>
+
+    </div>
+
+    <script>
+
+        let savedUsername = "";
+        let savedPassword = "";
+
+        function showRegister(){
+
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+
+            document.getElementById("message").innerHTML = "";
+
+        }
+
+        function showLogin(){
+
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+
+            document.getElementById("message").innerHTML = "";
+
+        }
+
+        function register(){
+
+            savedUsername =
+            document.getElementById("registerUsername").value;
+
+            savedPassword =
+            document.getElementById("registerPassword").value;
+
+            if(savedUsername === "" || savedPassword === ""){
+
+                document.getElementById("message").innerHTML =
+                "Please fill out all fields.";
+
+            }else{
+
+                document.getElementById("message").innerHTML =
+                "Registration Successful! Please login.";
+
+                showLogin();
+            }
+
+        }
+
+        function login(){
+
+            let username =
+            document.getElementById("loginUsername").value;
+
+            let password =
+            document.getElementById("loginPassword").value;
+
+            if(username === savedUsername &&
+               password === savedPassword){
+
+                alert("Login Successful!");
+
+                window.location.href = "index.html";
+
+            }else{
+
+                document.getElementById("message").innerHTML =
+                "Incorrect username or password.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

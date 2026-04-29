@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Iglesia Filipina Independiente</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="nav-cross">✝</span>
+      <div class="nav-logo-text">
+        <span class="nav-title">Iglesia Filipina Independiente</span>
+        <span class="nav-sub">Maragondon, Cavite</span>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="login.html" class="nav-login-btn">Login</a></li>
+    </ul>
+
+    <button class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="contact-hero">
+  <div class="contact-hero-overlay"></div>
+  <div class="contact-hero-content">
+    <span class="contact-hero-label">Get In Touch</span>
+    <div class="contact-hero-cross">✝</div>
+    <h1>Contact Us</h1>
+    <p>We are here to guide, serve, and pray with you.</p>
+
+    <div class="contact-hero-divider">
+      <span></span>
+      <span class="diamond"></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT SECTION ========== -->
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+      <span class="section-label">Reach Us</span>
+      <h2>Parish Information</h2>
+
+      <p><strong>Address:</strong><br>
+      Poblacion 2-B, Maragondon, Cavite</p>
+
+      <p><strong>Phone:</strong><br>
+      +63 916 323 1556</p>
+
+      <p><strong>Email:</strong><br>
+      ifi.maragondon@gmail.com</p>
+
+      <p><strong>Office Hours:</strong><br>
+      Monday – Saturday<br>
+      8:00 AM – 5:00 PM</p>
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <form class="contact-form" id="contactForm">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="contact-btn">Send Message</button>
+
+      <p id="formMessage" class="form-message"></p>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- ========== MAP (OPTIONAL) ========== -->
+<section class="contact-map">
+  <iframe 
+    src="https://www.google.com/maps?q=Maragondon+Cavite&output=embed"
+    loading="lazy">
+  </iframe>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <span class="footer-cross">✝</span>
+      <div>
+        <p class="footer-name">Iglesia Filipina Independiente</p>
+        <p class="footer-address">Poblacion 2-B, Maragondon, Cavite, Philippines</p>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+
+    <p class="footer-copy">&copy; 2026 Iglesia Filipina Independiente</p>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<!-- SIMPLE FORM FUNCTION -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const msg = document.getElementById("formMessage");
+  msg.textContent = "Your message has been sent successfully!";
+  msg.style.color = "green";
+
+  this.reset();
+});
+</script>
+
+</body>
+</html>
